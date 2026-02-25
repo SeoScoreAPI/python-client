@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+seoscoreapi/__init__.py
+seoscoreapi.egg-info/PKG-INFO
+seoscoreapi.egg-info/SOURCES.txt
+seoscoreapi.egg-info/dependency_links.txt
+seoscoreapi.egg-info/requires.txt
+seoscoreapi.egg-info/top_level.txt

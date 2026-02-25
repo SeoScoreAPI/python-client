@@ -1,0 +1,70 @@
+Metadata-Version: 2.4
+Name: seoscoreapi
+Version: 1.0.0
+Summary: Python client for SEO Score API — audit any URL for SEO issues with one function call
+Author-email: SEO Score API <info@seoscoreapi.com>
+License: MIT
+Project-URL: Homepage, https://seoscoreapi.com
+Project-URL: Documentation, https://seoscoreapi.com/docs
+Project-URL: Repository, https://github.com/SeoScoreAPI/examples
+Keywords: seo,audit,api,seo-score,website-audit,seo-checker
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.20
+Dynamic: license-file
+
+# seoscoreapi
+
+Python client for [SEO Score API](https://seoscoreapi.com) — audit any URL for SEO issues with one function call.
+
+## Install
+
+```bash
+pip install seoscoreapi
+```
+
+## Quick Start
+
+```python
+from seoscoreapi import audit, signup
+
+# Get a free API key (5 audits/day)
+key = signup("you@example.com")
+
+# Audit any URL
+result = audit("https://example.com", api_key=key)
+print(f"Score: {result['score']}/100 ({result['grade']})")
+
+# See what to fix
+for p in result["priorities"]:
+    print(f"  [{p['severity']}] {p['issue']}")
+```
+
+## Functions
+
+| Function | Description |
+|----------|-------------|
+| `signup(email)` | Get a free API key |
+| `audit(url, api_key)` | Run SEO audit on a URL |
+| `batch_audit(urls, api_key)` | Audit multiple URLs (paid) |
+| `usage(api_key)` | Check your usage/limits |
+| `add_monitor(url, api_key)` | Set up score monitoring (paid) |
+| `list_monitors(api_key)` | List active monitors |
+| `report_url(domain)` | Get shareable report URL |
+
+## What Gets Checked
+
+28 checks across 5 categories: meta & content, technical SEO, social/OG, performance, accessibility.
+
+## Links
+
+- [Website & Live Demo](https://seoscoreapi.com)
+- [API Docs](https://seoscoreapi.com/docs)
+- [GitHub Action](https://github.com/SeoScoreAPI/seo-audit-action)

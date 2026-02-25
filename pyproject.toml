@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seoscoreapi"
+version = "1.0.0"
+description = "Python client for SEO Score API — audit any URL for SEO issues with one function call"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [{name = "SEO Score API", email = "info@seoscoreapi.com"}]
+dependencies = ["requests>=2.20"]
+keywords = ["seo", "audit", "api", "seo-score", "website-audit", "seo-checker"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://seoscoreapi.com"
+Documentation = "https://seoscoreapi.com/docs"
+Repository = "https://github.com/SeoScoreAPI/examples"

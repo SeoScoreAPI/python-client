@@ -13,7 +13,7 @@ pip install seoscoreapi
 ```python
 from seoscoreapi import audit, signup
 
-# Get a free API key (2 audits/day)
+# Get a free API key (5 audits/day)
 key = signup("you@example.com")
 
 # Audit any URL

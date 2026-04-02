@@ -13,7 +13,7 @@ pip install seoscoreapi
 ```python
 from seoscoreapi import audit, signup
 
-# Get a free API key (5 audits/day)
+# Get a free API key (2 audits/day)
 key = signup("you@example.com")
 
 # Audit any URL
@@ -35,6 +35,7 @@ for p in result["priorities"]:
 | `usage(api_key)` | Check your usage/limits |
 | `add_monitor(url, api_key)` | Set up score monitoring (paid) |
 | `list_monitors(api_key)` | List active monitors |
+| `scoreboard_opt_out(api_key)` | Opt in/out of public scoreboard |
 | `report_url(domain)` | Get shareable report URL |
 
 ## What Gets Checked

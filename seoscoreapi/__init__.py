@@ -74,6 +74,13 @@ def scoreboard_opt_out(api_key: str, opt_out: bool = True) -> dict:
     return r.json()
 
 
+def competitive_audit(url: str, competitor_url: str, keyword: str, api_key: str) -> dict:
+    """Run a head-to-head competitive audit (Pro plan or higher). Returns gap score, per-check diffs, and action items."""
+    r = requests.post(f"{BASE_URL}/audit/competitive", json={"url": url, "competitor_url": competitor_url, "keyword": keyword}, headers={"X-API-Key": api_key, **_HEADERS})
+    r.raise_for_status()
+    return r.json()
+
+
 def report_url(domain: str) -> str:
     """Get the shareable report URL for a domain."""
     return f"{BASE_URL}/report/{domain}"

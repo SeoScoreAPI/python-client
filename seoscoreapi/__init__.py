@@ -17,10 +17,12 @@ Usage:
 Full docs: https://seoscoreapi.com/docs
 """
 
+from typing import Optional
+
 import requests
 
 BASE_URL = "https://seoscoreapi.com"
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 _HEADERS = {"User-Agent": f"seoscoreapi-python/{__version__}"}
 
@@ -84,3 +86,20 @@ def competitive_audit(url: str, competitor_url: str, keyword: str, api_key: str)
 def report_url(domain: str) -> str:
     """Get the shareable report URL for a domain."""
     return f"{BASE_URL}/report/{domain}"
+
+
+def history(url: str, api_key: str, limit: int = 100, since: Optional[float] = None) -> dict:
+    """Get historical audit scores and trend summary for a URL (Starter plan or higher)."""
+    params: dict = {"url": url, "limit": limit}
+    if since is not None:
+        params["since"] = since
+    r = requests.get(f"{BASE_URL}/history", params=params, headers={"X-API-Key": api_key, **_HEADERS})
+    r.raise_for_status()
+    return r.json()
+
+
+def history_domains(api_key: str) -> list:
+    """List every domain audited by this key with latest score and 30-day trend (Starter plan or higher)."""
+    r = requests.get(f"{BASE_URL}/history/domains", headers={"X-API-Key": api_key, **_HEADERS})
+    r.raise_for_status()
+    return r.json()["domains"]

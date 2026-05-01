@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "seoscoreapi"
-version = "1.1.0"
+version = "1.2.0"
 description = "Python client for SEO Score API — audit any URL for SEO issues with one function call"
 readme = "README.md"
 license = {text = "MIT"}

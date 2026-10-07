@@ -11,10 +11,11 @@ pip install seoscoreapi
 ## Quick Start
 
 ```python
-from seoscoreapi import audit, signup
+import os
+from seoscoreapi import audit
 
-# Get a free API key (2 audits/day, no credit card)
-key = signup("you@example.com")
+# Get a free API key (2 audits/day, no credit card) at https://seoscoreapi.com/#signup
+key = os.environ["SEO_SCORE_API_KEY"]
 
 # Run an audit
 result = audit("https://example.com", api_key=key)
@@ -25,7 +26,7 @@ print(f"Score: {result['score']}/100 ({result['grade']})")
 
 | Function | Description |
 |---|---|
-| `signup(email)` | Get a free API key |
+| `signup(email)` | Starts signup: the API emails a 6-digit code. It does not return a key (known issue: this call raises `KeyError` after the code is sent). Finish at [seoscoreapi.com](https://seoscoreapi.com/#signup) or with `POST /verify` |
 | `audit(url, api_key)` | Run SEO audit on a URL |
 | `batch_audit(urls, api_key)` | Audit up to 10 URLs in one call (paid) |
 | `compare(urls, api_key)` | Compare 2–5 URLs with a structured diff (Basic+) |

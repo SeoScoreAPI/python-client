@@ -22,4 +22,4 @@ dependencies = ["requests>=2.20"]
 [project.urls]
 Homepage = "https://seoscoreapi.com"
 Documentation = "https://seoscoreapi.com/docs"
-Repository = "https://github.com/avansledright/seoscoreapi.com"
+Repository = "https://github.com/SeoScoreAPI/python-client"

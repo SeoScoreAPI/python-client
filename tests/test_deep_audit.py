@@ -32,7 +32,7 @@ def no_sleep(monkeypatch):
 
 def test_defaults_to_main_host():
     assert seo.DEEP_AUDIT_URL == "https://seoscoreapi.com"
-    assert seo.__version__ == "1.5.0"
+    assert seo.__version__ == "1.7.1"
 
 
 def test_site_audit_posts_to_main_host():

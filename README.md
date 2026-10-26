@@ -14,7 +14,7 @@ pip install seoscoreapi
 import os
 from seoscoreapi import audit
 
-# Get a free API key (2 audits/day, no credit card) at https://seoscoreapi.com/#signup
+# Get a free API key (20 audits a month, no credit card) at https://seoscoreapi.com/#signup
 key = os.environ["SEO_SCORE_API_KEY"]
 
 # Run an audit
